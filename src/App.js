@@ -54,6 +54,7 @@ const App = () => {
                country={ country }
             />
             <CountriesList
+               countries={ countries }
                isLoading={ isFetchingCountriesStats }
                countriesStats={ countriesStats }
             />

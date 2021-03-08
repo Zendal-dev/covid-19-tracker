@@ -5,13 +5,13 @@ import { Loader } from '../index'
 
 import * as s from './CountriesList.module.scss'
 
-const CountriesList = ({ countriesStats, isLoading }) => {
+const CountriesList = ({ countriesStats, countries, isLoading }) => {
    const countriesList = countriesStats.length > 0
       ? countriesStats
          .filter(item => item)
          .map((item, index) => (
             <TableRow key={ index }>
-               <TableCell className={ s.cell } padding="none">{ item.name }</TableCell>
+               <TableCell className={ s.cell } padding="none">{ countries[index].name }</TableCell>
                <TableCell className={ s.cell } padding="none">{ item.confirmed }</TableCell>
             </TableRow>
          ))

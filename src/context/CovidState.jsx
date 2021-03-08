@@ -43,7 +43,9 @@ const CovidState = ({ children }) => {
 
    const fetchCountries = async () => {
       const data = await covid.fetchCountries()
-      dispatch({ type: SET_COUNTRIES, payload: data })
+      const filteredCountries = data.filter(country => country.name !== 'Gambia') // this country is not in the database
+
+      dispatch({ type: SET_COUNTRIES, payload: filteredCountries })
    }
 
    const fetchCountryStats = async country => {
@@ -71,9 +73,7 @@ const CovidState = ({ children }) => {
 
       try {
          if (countries.length > 0) {
-            const filteredCountries = countries.filter(country => country.name !== 'Gambia') // this country is not in the database
-
-            for (const country of filteredCountries) {
+            for (const country of countries) {
                const countryStats = await covid.fetchCountryStats(country.name)
                res.push(countryStats)
             }
