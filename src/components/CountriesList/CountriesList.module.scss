@@ -1,0 +1,24 @@
+.title {
+   margin-bottom: 15px;
+}
+
+.cell {
+   padding: 5px;
+}
+
+.tableWrapper {
+   height: 270px;
+   overflow-y: scroll;
+   &::-webkit-scrollbar {
+      width: 0.4rem;
+   }
+   &::-webkit-scrollbar-thumb {
+      background-color: rgb(202, 199, 190);
+      border-radius: 10rem;
+      border: 5px solid rgb(202, 199, 190);
+   }
+   &::-webkit-scrollbar-track {
+      background: #f0f0f0;
+      border-radius: 3px;
+   }
+}
